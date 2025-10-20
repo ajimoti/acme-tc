@@ -241,7 +241,7 @@ docker compose down
 
 ### 2. Money Handling
 - All prices are stored in cents (integers) to avoid floating-point precision issues
-- Rounding is performed using PHP_ROUND_HALF_UP for consistent results
+- Rounding is performed using `PHP_ROUND_HALF_UP` for consistent results
 - Division operations include a half-up flag for proper rounding
 
 ### 3. Offer Application Logic
@@ -253,22 +253,6 @@ docker compose down
   - Counts matching product codes in the basket
   - For every pair (2 items), applies 50% discount to one item
   - Odd numbers (e.g., 3 items) = 1 pair discounted + 1 full price
-
-### 4. Extensibility
-The system is designed to be easily extended:
-- **New Products**: Simply add to the `ProductCatalogue`
-- **New Delivery Rules**: Implement `DeliveryRuleInterface` and add to collection
-- **New Offers**: Implement `OfferInterface` (e.g., `BuyOneGetOneHalfPriceOffer`)
-- **Multiple Offers**: The `OfferRuleCollection` can handle multiple simultaneous offers
-
-### 5. Assumptions
-- Offers are applied before delivery charges (as this benefits the customer)
-- Multiple offers can stack (total discount is sum of all applicable offers)
-- Delivery rules are checked in order and first matching rule applies
-- Product codes are case-sensitive
-- All prices are in USD
-- Invalid product codes will throw exceptions (handled by `ProductCatalogue`)
-
 
 ## Author
 John Ajimoti

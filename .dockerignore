@@ -1,0 +1,9 @@
+vendor/
+.git/
+.gitignore
+README.md
+tests/
+.phpunit.cache/
+*.log
+.DS_Store
+Thumbs.db

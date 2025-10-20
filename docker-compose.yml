@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - APP_ENV=development
+    command: php -S 0.0.0.0:8000 -t public
+
+  test:
+    build: .
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
+    command: composer test
+
+  stan:
+    build: .
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
+    command: composer stan
+
+  dev:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - APP_ENV=development
+    command: composer install && php -S 0.0.0.0:8000 -t public

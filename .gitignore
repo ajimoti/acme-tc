@@ -1,0 +1,38 @@
+# Dependencies
+vendor/
+composer.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Cache
+.phpunit.cache/
+.phpstan.cache/
+
+# Docker
+.docker/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Build artifacts
+build/
+dist/
+
+# Coverage
+coverage/
+clover.xml
