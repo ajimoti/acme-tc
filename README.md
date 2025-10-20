@@ -196,6 +196,11 @@ Run static analysis:
 composer stan
 ```
 
+Or you can also run
+```bash
+bash run-tests.sh
+```
+
 ## Docker
 
 This project includes a Dockerfile and docker-compose.yml to run the app, tests, and static analysis in containers.
